@@ -2,13 +2,13 @@
 
 // Constructor de Objetos para crear clientes
 
-let array = [];
+let cuestionario = [];
 
-let nombre = prompt ("¿Cuál es tu nombre?")
-let apellido = prompt ("¿Cuál es tu apellido?")
-let evento = prompt ("¿Qué tipo de evento quieres cotizar?")
-let hora = prompt ("Desayuno, comida o cena")
-let invitados = prompt ("¿Cuántos invitados habrá?")
+let nombre = prompt ("¿Cuál es tu nombre?").toLowerCase()
+let apellido = prompt ("¿Cuál es tu apellido?").toLowerCase()
+let evento = prompt ("¿Qué tipo de evento quieres cotizar?").toLowerCase()
+let hora = prompt ("Desayuno, comida o cena").toLowerCase()
+let invitados = prompt ("¿Cuántos invitados habrá?").toLowerCase()
 
     function Cliente (nombre, apellido, evento, hora, invitados){
         this.nombre= nombre;
@@ -19,8 +19,9 @@ let invitados = prompt ("¿Cuántos invitados habrá?")
     };
 
 const cliente1 = new Cliente (nombre, apellido, evento, hora, invitados);
-array.push(cliente1);
-console.log(array);
+cuestionario.push(cliente1);
+console.log(cuestionario);
+
 
 // Switch case para hacer cotización
 
@@ -54,9 +55,11 @@ switch (hora){
 
 // Condicionales para saber si quiere la reserva o no
 
-let reserva= prompt ("¿Quieres continuar con tu reservación?");
+let reserva= prompt ("¿Quieres continuar con tu reservación?").toLowerCase();
 if (reserva == "si"){
-    prompt("¿Cuándo deseas que sea tu evento?");
+    prompt("¿Cuándo deseas que sea tu evento? (dd/mm/aa");
+    console.log ("Tu reserva está hecha");
+
 } else {
     alert("vuelve pronto");
 }
