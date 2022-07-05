@@ -35,9 +35,6 @@ const cliente1 = new Cliente (nombre, apellido, evento, fecha, servicio, invitad
 cuestionario.push(cliente1);
 console.log(cuestionario); 
 
-/* while (nombre, apellido, evento, fecha, servicio, invitados =! "");
-{
- */
 
 // Precio del servicio
 
@@ -56,8 +53,6 @@ if (reserva == "si"){
 } else {
     alert("vuelve pronto");
 }
-/* }
 
-alert ("Tus datos están incompletos, por favor rellena el formulario de nuevo"); */
 
 
