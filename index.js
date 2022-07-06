@@ -2,7 +2,7 @@
 
 // Catálogo de servicios
 
-const servicios = [
+/* const servicios = [
     {servicio: "desayuno continental", precio: 150},
     {servicio: "desayuno buffet", precio: 200},
     {servicio: "comida corrida", precio: 200},
@@ -10,28 +10,39 @@ const servicios = [
     {servicio: "cena ligera", precio: 100},
     {servicio: "cena buffet", precio: 200},
 ];
+ */
 
 // Constructor de Objetos para crear clientes
 
-let cuestionario = [];
+let boton = document.getElementById("btnCotizar")
+boton.onclick = () => {alert ("Gracias por enviarno tu información")}
+
+let formulario = document.getElementById("formulario");
+console.log(formulario);
+
+formulario.addEventListener ("submit", validacion);
+
+function validacion (e){
+    e.preventDefault();
+} 
+
+/* let cuestionario = [];
 
 let nombre = prompt ("¿Cuál es tu nombre?").toLowerCase()
-let apellido = prompt ("¿Cuál es tu apellido?").toLowerCase()
 let evento = prompt ("¿Qué tipo de evento quieres cotizar?").toLowerCase()
 let fecha = prompt ("¿Cuándo deseas que sea tu evento? (dd/mm/aa").toLowerCase()
 let servicio = prompt ("Qué servicio quieres para tu evento").toLowerCase()
 let invitados = prompt ("¿Cuántos invitados habrá?").toLowerCase()
 
-    function Cliente (nombre, apellido, evento, fecha, servicio, invitados){
+    function Cliente (nombre, evento, fecha, servicio, invitados){
         this.nombre= nombre;
-        this.apellido= apellido;
         this.evento= evento;
         this.fecha= fecha;
         this.servicio= servicio;
         this.invitados= invitados;
     };
 
-const cliente1 = new Cliente (nombre, apellido, evento, fecha, servicio, invitados);
+const cliente1 = new Cliente (nombre, evento, fecha, servicio, invitados);
 cuestionario.push(cliente1);
 console.log(cuestionario); 
 
@@ -56,3 +67,4 @@ if (reserva == "si"){
 
 
 
+ */
