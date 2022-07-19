@@ -1,20 +1,31 @@
 // Cotización de eventos
 
-/* // Iniciar sesión
+// Iniciar sesión
+
+/* 
+LO INTENTO CON HTML CON UN .VALUE PERO NO ME LO AGARRA
+
+localStorage.setItem("nombre", usuario.value);
+let usuarioEnLS = localStorage.getItem("nombre");
+console.log (usuarioEnLS); 
+
+let boton = document.getElementById("btnIngresar")
+    boton.onclick = () => {alert ("Bienvenido")}  */
+
 let usuario;
 let usuarioEnLS = localStorage.getItem("usuario");
 
+
 // Recuperar
 
-if (usuarioEnLS) {
+  if (usuarioEnLS) {
     usuario = usuarioEnLS;
-    alert ("Bienvenido" + usuario);
+    alert ("Bienvenido " + usuario);
 } else {
-    let usuario = getElementById ("usuario");
-    let boton = document.getElementById("btnIngresar")
-    boton.onclick = () => {alert ("Bienvenido")} 
-    localStorage.setItem("usuario" , usuario);
-} */
+    usuario=prompt ("Ingresa tu usuario");
+    localStorage.setItem("usuario", usuario);
+    alert ("Bienvenido por primera vez");
+}  
  
 // Constructor de Objetos para crear clientes  
 
@@ -33,6 +44,7 @@ let cuestionario = [];
     let servicio = form.children[3].value.toLowerCase();
     let invitados = form.children[4].value.toLowerCase();
 
+
     function Cliente (nombre, evento, fecha, servicio, invitados){
         this.nombre= nombre;
         this.evento= evento;
@@ -43,6 +55,14 @@ let cuestionario = [];
     const cliente1 = new Cliente (nombre, evento, fecha, servicio, invitados);
     cuestionario.push(cliente1);
     console.log(cuestionario); 
+
+ /*   
+ Esto lo hice para probar si servía, y sí, sólo no me sirve con un usuario al inicio.
+
+ localStorage.setItem("nombre", form.children[0].value);
+    let usuarioEnLS = localStorage.getItem("nombre");
+    console.log (usuarioEnLS); 
+ */
 
 
 
@@ -70,14 +90,4 @@ let precioTotal = buscaServicio.precio * invitados;
 alert ("El precio de tu evento sería " + precioTotal); 
 }
 
-// Condicionales para saber si quiere la reserva o no
 
-/* let reserva= prompt ("¿Quieres continuar con tu reservación?").toLowerCase();
-if (reserva == "si"){
-    console.log ("Tu reserva está hecha");
-
-
-} else {
-    alert("vuelve pronto");
-}
-  */
