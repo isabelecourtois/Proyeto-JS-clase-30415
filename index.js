@@ -1,17 +1,4 @@
 // Cotización de eventos
-
-// Iniciar sesión
-let usuario;
-let usuarioEnLS;
-
-
-// Recuperar
-
-  if (usuarioEnLS) {
-    usuario = usuarioEnLS;
-    alert ("tenías una cotización anterior");
-} else {
-
  
 // Constructor de Objetos para crear clientes  
 
@@ -37,7 +24,6 @@ let usuarioEnLS;
     
     function validarFormulario (e){
         e.preventDefault();
-        let form = e.target
 
 
     const cliente1 = new Cliente (nombre.value, evento.value, fecha.value, servicio.value, invitados.value);
@@ -65,6 +51,7 @@ let precioTotal = buscaServicio.precio * invitados.value;
 console.log(precioTotal);
 
 
+// Cotización en el HTML
 const hacerCotizacion = () => {
     cotizacion.innerHTML = `<div class="cotizacionFinal">
                                 <h2>HOLA: ${nombre.value}</h2>
@@ -77,11 +64,18 @@ const hacerCotizacion = () => {
 let boton = document.getElementById("btnCotizar")
 boton.onclick = () => hacerCotizacion()
 
+
+// Ver Cotizaciones Pasadas
+
+// Guardas en el localStorage
+
 localStorage.setItem("cuestionario",JSON.stringify (cuestionario));    
 let cotisPasadas =JSON.parse(localStorage.getItem("cuestionario")) || [];
 console.log(cotisPasadas);
 
-const verCotizacionPasada = () => {
+
+// Cotizaciones pasadas en el HTML
+const verCotizacion = () => {
     cotisPasadas.innerHTML = `<div class="cotizacionFinal">
                                 <h2>HOLA: ${nombre.value}</h2>
                                 <p>Tu cotización para tu ${evento.value} sería $ ${precioTotal} </p>
@@ -89,5 +83,11 @@ const verCotizacionPasada = () => {
                             </div>`
 };
 
-}
+
+//No agarra el botón, no sé por qué
+let boton2 = document.getElementById("btnCotisPasadas")
+boton2.onclick = (e) => {
+    e.preventDefault();
+    verCotizacion ()
+};
 }
