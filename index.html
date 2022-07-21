@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form id="form1">
+    <form>
     <input id ="usuario" type="text" placeholder="Usuario">
     <button id="btnIngresar" type="submit" value="submit"> Ingresar </button>
     </form>
@@ -17,15 +17,51 @@
     <div>
         <h2 id="pregunta">¿Quieres realizar una cotización?</h2>
         <form id="form">
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Tipo de evento">
-            <input type="date" placeholder="Fecha">
-            <input type="text" placeholder="Servicio">
-            <input type="number" placeholder="Número de invitados">
+            <ul>
+                <li>
+                    <label for='nombre'>Nombre</label>  
+                    <input id="nombre" type="text" placeholder="Nombre" required>
+                </li>
+
+                <li>
+                    <label for='evento'>Tipo de evento</label>  
+                    <input id= "evento" type="text" placeholder="Tipo de evento" required>
+                </li>
+
+                <li>
+                    <label for='fecha'>Fecha</label>  
+                    <input id="fecha" type="date" placeholder="Fecha" required>
+                </li>
+
+                <li>
+                    <label for='servicio'>Servicio</label>  
+                    <select id="servicio" name="Servicio" required>
+                        <option value=''>Seleccione</option>
+                        <option>Desayuno Continental</option>
+                        <option>Desayuno Buffet</option>
+                        <option>Comida Corrida</option>
+                        <option>Comida Buffet</option>
+                        <option>Cena Ligera</option>
+                        <option>Cena Buffet</option>
+                        </select> 
+                </li>
+                <li>
+                    <label for='invitados'>Número de invitados</label>  
+                    <input id= "invitados" type="number" placeholder="Número de invitados" required>
+                </li>
+                </ul>
             <button id="btnCotizar" type="submit" value="submit"> Cotizar </button>
+            
         </form>
     </div>
-    
+    <div id="cotizacion">
+
+    </div>
+
+    <div id="cotisPasadas">
+        <h2>¿Quieres ver tus cotizaciones pasadas?</h2>
+        <button id="btnCotisPasadas" type="submit" value="submit"> Mis cotizaciones </button>   
+    </div>
 
     <script src="./index.js"></script>
 </body>

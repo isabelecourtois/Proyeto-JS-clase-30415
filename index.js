@@ -1,49 +1,27 @@
 // Cotización de eventos
 
 // Iniciar sesión
-
-/* 
-LO INTENTO CON HTML CON UN .VALUE PERO NO ME LO AGARRA
-
-localStorage.setItem("nombre", usuario.value);
-let usuarioEnLS = localStorage.getItem("nombre");
-console.log (usuarioEnLS); 
-
-let boton = document.getElementById("btnIngresar")
-    boton.onclick = () => {alert ("Bienvenido")}  */
-
 let usuario;
-let usuarioEnLS = localStorage.getItem("usuario");
+let usuarioEnLS;
 
 
 // Recuperar
 
   if (usuarioEnLS) {
     usuario = usuarioEnLS;
-    alert ("Bienvenido " + usuario);
+    alert ("tenías una cotización anterior");
 } else {
-    usuario=prompt ("Ingresa tu usuario");
-    localStorage.setItem("usuario", usuario);
-    alert ("Bienvenido por primera vez");
-}  
+
  
 // Constructor de Objetos para crear clientes  
 
- let formulario = document.getElementById("form");
-formulario.addEventListener ("submit", validarFormulario);
+    let cuestionario = [];
 
-function validarFormulario (e){
-    e.preventDefault();
-    let form = e.target
-
-let cuestionario = [];
-
-    let nombre = form.children[0].value.toLowerCase();
-    let evento = form.children[1].value.toLowerCase();
-    let fecha = form.children[2].value.toLowerCase();
-    let servicio = form.children[3].value.toLowerCase();
-    let invitados = form.children[4].value.toLowerCase();
-
+    let nombre = document.getElementById("nombre");
+    let evento = document.getElementById("evento");
+    let fecha = document.getElementById("fecha");
+    let servicio = document.getElementById("servicio");
+    let invitados = document.getElementById("invitados");
 
     function Cliente (nombre, evento, fecha, servicio, invitados){
         this.nombre= nombre;
@@ -51,43 +29,65 @@ let cuestionario = [];
         this.fecha= fecha;
         this.servicio= servicio;
         this.invitados= invitados;
+
     };
-    const cliente1 = new Cliente (nombre, evento, fecha, servicio, invitados);
+
+    let formulario = document.getElementById("form");
+    formulario.addEventListener ("submit", validarFormulario);
+    
+    function validarFormulario (e){
+        e.preventDefault();
+        let form = e.target
+
+
+    const cliente1 = new Cliente (nombre.value, evento.value, fecha.value, servicio.value, invitados.value);
     cuestionario.push(cliente1);
     console.log(cuestionario); 
 
- /*   
- Esto lo hice para probar si servía, y sí, sólo no me sirve con un usuario al inicio.
-
- localStorage.setItem("nombre", form.children[0].value);
-    let usuarioEnLS = localStorage.getItem("nombre");
-    console.log (usuarioEnLS); 
- */
-
-
-
-let boton = document.getElementById("btnCotizar")
-boton.onclick = () => {alert ("Gracias por enviarno tu información")} 
-
+   
 
 // Catálogo de servicios
 
 
 const servicios = [
-    {servicio: "desayuno continental", precio: 150},
-    {servicio: "desayuno buffet", precio: 200},
-    {servicio: "comida corrida", precio: 200},
-    {servicio: "comida buffet", precio: 300},
-    {servicio: "cena ligera", precio: 100},
-    {servicio: "cena buffet", precio: 200},
+    {servicio: "Desayuno Continental", precio: 150},
+    {servicio: "Desayuno Buffet", precio: 200},
+    {servicio: "Comida Corrida", precio: 200},
+    {servicio: "Comida Buffet", precio: 300},
+    {servicio: "Cena Ligera", precio: 100},
+    {servicio: "Cena Buffet", precio: 200},
 ];
 
 // Precio del servicio
 
-let buscaServicio = servicios.find (elemento => elemento.servicio === servicio);
-console.log(buscaServicio.precio);
-let precioTotal = buscaServicio.precio * invitados;
-alert ("El precio de tu evento sería " + precioTotal); 
+let buscaServicio = servicios.find (elemento => elemento.servicio === servicio.value);
+let precioTotal = buscaServicio.precio * invitados.value;
+console.log(precioTotal);
+
+
+const hacerCotizacion = () => {
+    cotizacion.innerHTML = `<div class="cotizacionFinal">
+                                <h2>HOLA: ${nombre.value}</h2>
+                                <p>Tu cotización para tu ${evento.value} sería $ ${precioTotal} </p>
+
+                            </div>`
+};
+
+
+let boton = document.getElementById("btnCotizar")
+boton.onclick = () => hacerCotizacion()
+
+localStorage.setItem("cuestionario",JSON.stringify (cuestionario));    
+let cotisPasadas =JSON.parse(localStorage.getItem("cuestionario")) || [];
+console.log(cotisPasadas);
+
+const verCotizacionPasada = () => {
+    cotisPasadas.innerHTML = `<div class="cotizacionFinal">
+                                <h2>HOLA: ${nombre.value}</h2>
+                                <p>Tu cotización para tu ${evento.value} sería $ ${precioTotal} </p>
+
+                            </div>`
+};
+
 }
-
-
+}
