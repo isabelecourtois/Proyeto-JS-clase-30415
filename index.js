@@ -19,9 +19,12 @@ const servicios = [
 
 // Constructor de Objetos para crear clientes  
 
+
 const hacerCuestionario = () => {
+
     let cuestionario = [];
 
+    
     function Cliente(nombre, evento, fecha, servicio, invitados) {
         this.nombre = nombre;
         this.evento = evento;
@@ -37,6 +40,7 @@ const hacerCuestionario = () => {
 
     localStorage.setItem("cuestionario", JSON.stringify(cuestionario));
 };
+
 
 // Hacer Cotización
 
@@ -76,8 +80,8 @@ const verCotizacion = () => {
         console.log(producto.nombre);
 
 
-        cotizacionesPasadas.innerHTML = `<div class="cotizacionFinal">
-                                <h2>¡Hola!</h2>
+        cotizacionesPasadas.innerHTML = `<div class="cotizacionesPasadasFinal">
+                                <h2>Bienvenido de vuelta</h2>
                                 <p>Tu última cotización es un ${producto.evento} para ${producto.invitados} personas el día ${producto.fecha}</p>
 
                             </div>`

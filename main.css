@@ -1,133 +1,176 @@
  /* Default height for small devices */
  #intro-example {
-    height: 400px;
-}
+     height: 400px;
+ }
 
-/* Height for devices larger than 992px */
-@media (min-width: 992px) {
-    #intro-example {
-        height: 600px;
-    }
-}
+ /* Height for devices larger than 992px */
+ @media (min-width: 992px) {
+     #intro-example {
+         height: 600px;
+     }
+ }
 
-/* Estilos Index */
-body {
-    font-family: comfortaa;
-}
-.home-header{
-    display: grid;
-    grid-template-areas: 
-    "homebanner"
-    "homelogo"
-    "homehero" ;
-}
+ /* Estilos Index */
+ body {
+     font-family: comfortaa;
+ }
 
-.home-banner{
-    background-color: bisque;
-    text-align: center;
+ .home-header {
+     display: grid;
+     grid-template-areas:
+         "homebanner"
+         "homelogo"
+         "homehero";
+ }
+
+ .home-banner {
+     background-color: bisque;
+     text-align: center;
+     justify-content: center;
+     padding-top: 10px;
+ }
+
+ .home-banner {
+     grid-area: homebanner;
+ }
+
+ .home-logo {
+     grid-area: homelogo;
+     text-align: center;
+ }
+
+ .home-logo img {
+     width: 200px;
+     height: auto;
+ }
+
+ .home-hero {
+     grid-area: homehero;
+ }
+
+ .mb-3 {
+     color: rgb(51, 39, 39);
+     font-weight: bold;
+     font-size: 50px;
+ }
+
+ .mb-4 {
+     color: white;
+     font-weight: bold;
+     font-size: 30px;
+ }
+
+ .home-cotizacion {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     background-color: bisque;
+     margin: 50px 0px;
+     padding: 50px 10px 50px 10px;
+ }
+
+ #btnCotizar {
+     height: 40px;
+     width: 180px;
+     background-color: white;
+     border-style: none;
+     border-radius: 6px;
+     text-align: center;
+     font-weight: bolder;
+
+ }
+
+ #pregunta {
+     margin-bottom: 50px;
+ }
+
+ .home-cotizacion-ul {
+     list-style: none;
+ }
+
+ .home-cotizacion-ul label {
+     height: 40px;
+     width: 180px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+
+ .home-cotizacion-ul input {
+     width: 300px;
+     height: 30px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+
+ .home-cotizacion-ul select {
+     width: 300px;
+     height: 30px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+
+ .home-cotisPasadas {
+     margin: 50 0px;
+     padding: 50px 10px 50px 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     background-color: bisque;
+     background-size: 100%;
+ }
+
+ #cotizacion{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding-top: 10px;
-}
+    align-items: center;
+ }
 
-.home-banner {
-    grid-area:homebanner ;
-}
+ #cotizacionesPasadas{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
 
-.home-logo {
-    grid-area: homelogo;
-    text-align: center;
-}
+ .home-clima {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     margin: 50 0px;
+     padding: 50px 10px 50px 10px;
+     background-color: bisque;
+     background-size: 100%;
+ }
 
-.home-logo img{
-    width: 200px;
-    height: auto;
-}
-.home-hero {
-    grid-area: homehero;
-}
-
-.mb-3{
-    color: rgb(51, 39, 39);
-    font-weight: bold;
-    font-size: 50px;
-}
-
-.mb-4{
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.home-cotizacion{
-margin: 50px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-items: center
-}
-
-#pregunta{
-    margin-bottom: 50px;
-}
-
-.home-cotizacion-ul {
-    list-style: none;
-    }
-
-.home-cotizacion-ul label{
+ #btnCotisPasadas{
     height: 40px;
     width: 180px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.home-cotizacion-ul input{
-    width: 300px;
-    height: 30px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.home-cotizacion-ul select{
-    width: 300px;
-    height: 30px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.home-cotisPasadas{
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center
-}
-
-.cotizacionFinal{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: white;
+    border-style: none;
+    border-radius: 6px;
     text-align: center;
-}
-.home-clima{
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    font-weight: bolder;
+ }
 
-}
-#api{
-    margin: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    justify-content: center;
-    border-style: none solid;
-}
+ #api {
+     margin: 50px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+     justify-content: center;
+     border-style: none solid;
+ }
 
-.home-clima-dia{
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    justify-content: center;
-    border-style: none solid;
-}
+ .home-clima-dia {
+     margin: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     justify-content: center;
+     border-style: none solid;
+     
+ }
